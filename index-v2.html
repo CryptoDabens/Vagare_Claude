@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagare Travels · Agencia de viajes by Gaby Guerra</title>
+  <meta name="description" content="Vagare Travels: paquetes por destino, cruceros, todo incluido, viajes en grupo, románticos y a la medida. Descubre el mundo, viaja libre, crea tu historia.">
+
+  <!-- Favicon: usa el logo simple. Cambia el archivo en img/logos/ manteniendo el nombre. -->
+  <link rel="icon" href="img/logos/IMG%20Vagare%20Logo%20simple.jpeg">
+
+  <!-- Tipografías (Cinzel sustituye a Trajan Pro, que es de pago) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos: colores, fuentes y tamaños se cambian en la sección 1 de main-v2.css -->
+  <link rel="stylesheet" href="main-v2.css">
+</head>
+
+<body>
+
+  <!-- ================================================================
+       1. ENCABEZADO + BARRA DE NAVEGACIÓN
+       ================================================================ -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <a class="header__logo" href="#inicio" aria-label="Vagare Travels — Inicio">
+        <!-- LOGO HORIZONTAL: reemplaza el archivo conservando el nombre -->
+        <img src="img/logos/Logo%20Vagare%20travels%20Horizontal.png" alt="Vagare Travels">
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Inicio</a></li>
+
+          <li class="nav__item--dropdown">
+            <button class="nav__link" id="servicesToggle" aria-expanded="false" aria-controls="servicesMenu">
+              Servicios <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown" id="servicesMenu">
+              <li><a href="#servicios">Paquetes por Destino</a></li>
+              <li><a href="#servicios">Paquetes temáticos</a></li>
+              <li><a href="#servicios">Cruceros</a></li>
+              <li><a href="#servicios">Todo-Incluido</a></li>
+              <li><a href="#servicios">Viajes en Grupo</a></li>
+              <li><a href="#servicios">Viajes Románticos</a></li>
+              <li><a href="#servicios">Viajes a la medida</a></li>
+              <li><a href="#servicios">Vuelos y hoteles</a></li>
+            </ul>
+          </li>
+
+          <li><a class="nav__link" href="#paquetes">Paquetes</a></li>
+          <li><a class="nav__link" href="#nosotros">Nosotros</a></li>
+          <li><a class="nav__link" href="#contacto">Contacto</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="#cotizacion">Solicita una cotización</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ================================================================
+         2. HERO CON IMAGEN GRANDE
+         ================================================================ -->
+    <section class="hero" id="inicio">
+      <!-- IMAGEN DE FONDO: reemplaza img/hero/lets-go-travel.jpg -->
+      <img class="hero__bg" src="img/hero/lets-go-travel.jpg" alt="" aria-hidden="true">
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">by Gaby Guerra</p>
+        <h1>Vagare <span>Travels</span></h1>
+        <p class="hero__tagline">Descubre el mundo · Viaja libre · Crea tu historia</p>
+        <div class="hero__actions">
+          <a href="#cotizacion" class="btn btn--primary">Cotiza tu viaje</a>
+          <a href="#paquetes" class="btn btn--secondary">Ver paquetes</a>
+        </div>
+      </div>
+
+      <span class="hero__scroll" aria-hidden="true">Explora</span>
+    </section>
+
+
+    <!-- ================================================================
+         3. FRANJA DE CONFIANZA
+         ================================================================ -->
+    <section class="trust" aria-label="Por qué elegirnos">
+      <div class="container trust__grid">
+        <div class="trust__item"><strong>+120</strong><span>viajes planeados</span></div>
+        <div class="trust__item"><strong>+30</strong><span>destinos en 4 continentes</span></div>
+        <div class="trust__item"><strong>24/7</strong><span>acompañamiento durante tu viaje</span></div>
+        <div class="trust__item"><strong>0</strong><span>costo por asesoría</span></div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         4. SERVICIOS
+         ================================================================ -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Nuestros servicios</span>
+          <h2>Un viaje para cada historia</h2>
+          <p>Diseñamos experiencias completas: vuelos, hospedaje, traslados, tours y seguro de viaje, con asesoría personalizada de principio a fin.</p>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <h3>Paquetes por destino</h3>
+            <p>Europa, Asia, Caribe, Sudamérica y México. Rutas probadas con los imprescindibles de cada ciudad.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 16.4 6.7 19.2l1.1-5.9L3.5 9.2l5.9-.8z"/></svg></div>
+            <h3>Paquetes temáticos</h3>
+            <p>Gastronomía, aventura, bienestar, parques temáticos o conciertos: viajes construidos alrededor de lo que te apasiona.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l2-6h14l2 6"/><path d="M6 11V7h12v4"/><path d="M10 7V4h4v3"/><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/></svg></div>
+            <h3>Cruceros</h3>
+            <p>Caribe, Mediterráneo, Alaska y más. Cabinas, excursiones y vuelos coordinados en una sola reservación.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M8 10h5.5a2 2 0 0 1 0 4H9"/></svg></div>
+            <h3>Todo-Incluido</h3>
+            <p>Resorts en Riviera Maya, Los Cabos, Punta Cana y Puerto Vallarta. Relájate: todo está resuelto.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M15 20c0-2.5 1.5-4.5 4-4.5s3 2 3 4.5"/></svg></div>
+            <h3>Viajes en grupo</h3>
+            <p>Familias, amigos, graduaciones o empresas. Tarifas especiales y logística coordinada para todos.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+            <h3>Viajes románticos</h3>
+            <p>Lunas de miel, aniversarios y propuestas. Detalles cuidados para que el momento sea inolvidable.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l4-1 10-10-3-3L5 16z"/><path d="M13 7l3 3"/><path d="M14 4l2-2 4 4-2 2"/></svg></div>
+            <h3>Viajes a la medida</h3>
+            <p>Dinos qué sueñas y lo convertimos en itinerario: fechas, ritmo, presupuesto y estilo 100% tuyos.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.5 13.5L4 11l1.5-1.5 6.5 1 4.5-4.5a1.6 1.6 0 0 1 2.3 2.3L14.3 12.8l1 6.5L13.8 21l-2.5-6.5"/><path d="M6 20h12"/></svg></div>
+            <h3>Vuelos y hoteles</h3>
+            <p>¿Solo necesitas el vuelo o el hospedaje? También lo reservamos, con las mejores tarifas y sin comisiones ocultas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         5. PAQUETES (CARRUSEL)
+         Para agregar un paquete: copia un <article class="package-card">
+         y cambia imagen, textos y precio. El carrusel se ajusta solo.
+         ================================================================ -->
+    <section class="section section--alt" id="paquetes">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Paquetes destacados</span>
+          <h2>Destinos que enamoran</h2>
+          <p>Precios por persona en ocupación doble, sujetos a disponibilidad y temporada. Pregunta por meses sin intereses.</p>
+        </div>
+
+        <div class="carousel reveal" id="packagesCarousel">
+          <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Paquete anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+
+              <article class="package-card">
+                <div class="package-card__media">
+                  <img src="img/packages/Paris-en-pareja.png" alt="Pareja frente a la Torre Eiffel en París" loading="lazy">
+                  <span class="package-card__tag">Romántico</span>
+                </div>
+                <div class="package-card__body">
+                  <div class="package-card__meta">Francia · 7 días / 6 noches</div>
+                  <h3>París en pareja</h3>
+                  <p>Vuelo redondo, hotel boutique en Le Marais, crucero por el Sena con cena y tour a Versalles.</p>
+                  <div class="package-card__footer">
+                    <div class="package-card__price">$48,900 MXN<small>por persona</small></div>
+                    <a href="#cotizacion" class="btn btn--outline-navy btn--sm" data-package="París en pareja">Cotizar</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="package-card">
+                <div class="package-card__media">
+                  <img src="img/destinations/Roma.png" alt="Coliseo de Roma" loading="lazy">
+                  <span class="package-card__tag">Por destino</span>
+                </div>
+                <div class="package-card__body">
+                  <div class="package-card__meta">Italia · 8 días / 7 noches</div>
+                  <h3>Roma, Florencia y Venecia</h3>
+                  <p>Tren de alta velocidad entre ciudades, entradas sin fila al Coliseo y los Museos Vaticanos, guía en español.</p>
+                  <div class="package-card__footer">
+                    <div class="package-card__price">$52,500 MXN<small>por persona</small></div>
+                    <a href="#cotizacion" class="btn btn--outline-navy btn--sm" data-package="Roma, Florencia y Venecia">Cotizar</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="package-card">
+                <div class="package-card__media">
+                  <img src="img/destinations/londres.jpg" alt="Big Ben y el Parlamento en Londres" loading="lazy">
+                  <span class="package-card__tag">Temático</span>
+                </div>
+                <div class="package-card__body">
+                  <div class="package-card__meta">Reino Unido · 6 días / 5 noches</div>
+                  <h3>Londres clásico</h3>
+                  <p>Oyster card incluida, tour de Harry Potter en Warner Bros. Studios, London Eye y día libre en Camden.</p>
+                  <div class="package-card__footer">
+                    <div class="package-card__price">$44,200 MXN<small>por persona</small></div>
+                    <a href="#cotizacion" class="btn btn--outline-navy btn--sm" data-package="Londres clásico">Cotizar</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="package-card">
+                <div class="package-card__media">
+                  <img src="img/destinations/paris.jpg" alt="Torre Eiffel al atardecer" loading="lazy">
+                  <span class="package-card__tag">En grupo</span>
+                </div>
+                <div class="package-card__body">
+                  <div class="package-card__meta">Europa · 12 días / 11 noches</div>
+                  <h3>Europa esencial en grupo</h3>
+                  <p>París, Ámsterdam, Berlín y Praga con coordinador acompañante. Salidas garantizadas desde CDMX y Guadalajara.</p>
+                  <div class="package-card__footer">
+                    <div class="package-card__price">$68,900 MXN<small>por persona</small></div>
+                    <a href="#cotizacion" class="btn btn--outline-navy btn--sm" data-package="Europa esencial en grupo">Cotizar</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="package-card">
+                <div class="package-card__media">
+                  <img src="img/hero/lets-go-travel.jpg" alt="Collage de lugares icónicos del mundo" loading="lazy">
+                  <span class="package-card__tag">Todo-Incluido</span>
+                </div>
+                <div class="package-card__body">
+                  <div class="package-card__meta">Riviera Maya · 5 días / 4 noches</div>
+                  <h3>Riviera Maya todo incluido</h3>
+                  <p>Resort 5 estrellas frente al mar, traslados aeropuerto–hotel y excursión a Tulum y cenote.</p>
+                  <div class="package-card__footer">
+                    <div class="package-card__price">$18,900 MXN<small>por persona</small></div>
+                    <a href="#cotizacion" class="btn btn--outline-navy btn--sm" data-package="Riviera Maya todo incluido">Cotizar</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <button class="carousel__btn carousel__btn--next" type="button" aria-label="Paquete siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+
+          <div class="carousel__dots" role="tablist" aria-label="Páginas del carrusel"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         6. NOSOTROS / ASESORA
+         ================================================================ -->
+    <section class="section" id="nosotros">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <!-- FOTO DE GABY: reemplaza por img/about/gaby.jpg cuando la tengas -->
+          <img src="img/GG.jpg" alt="Gaby Guerra, asesora de viajes de Vagare Travels">
+        </div>
+        <div class="reveal">
+          <span class="section__eyebrow">Sobre nosotros</span>
+          <h2>Tu asesora de viajes de confianza</h2>
+          <p>Soy Gaby Guerra y fundé Vagare Travels con una idea simple: viajar no debería ser complicado. Me encargo de cada detalle para que tú solo te ocupes de disfrutar.</p>
+          <ul class="about__list">
+            <li>Asesoría personalizada sin costo: escuchamos primero, proponemos después.</li>
+            <li>Un solo contacto antes, durante y después de tu viaje, por WhatsApp.</li>
+            <li>Alianzas con mayoristas, aerolíneas y navieras para conseguir la mejor tarifa.</li>
+            <li>Planes de pago y meses sin intereses con tarjetas participantes.</li>
+          </ul>
+          <p class="about__signature">— Gaby Guerra</p>
+          <a href="#cotizacion" class="btn btn--primary">Platiquemos de tu viaje</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         7. TESTIMONIOS
+         ================================================================ -->
+    <section class="section section--dark" id="testimonios">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Testimonios</span>
+          <h2>Historias de quienes ya viajaron</h2>
+          <p>Lo que más nos enorgullece: clientes que regresan y recomiendan.</p>
+        </div>
+
+        <div class="testimonials__grid">
+          <article class="testimonial reveal">
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="testimonial__text">Nuestra luna de miel en París fue perfecta. Gaby resolvió todo, hasta la reservación en el restaurante donde queríamos cenar. Cero estrés, puros recuerdos.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">AM</div>
+              <div><strong>Ana y Marco</strong><span>París en pareja · Mazatlán</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="testimonial__text">Viajamos 14 personas de la familia a Riviera Maya y no hubo un solo contratiempo. Los traslados llegaron puntuales y el hotel superó lo que vimos en fotos.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">LR</div>
+              <div><strong>Lucía Ramírez</strong><span>Viaje en grupo · Culiacán</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="testimonial__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="testimonial__text">Era mi primer viaje a Europa y tenía mil dudas. Me armaron un itinerario a mi ritmo y me acompañaron por WhatsApp todo el tiempo. Ya estoy planeando el siguiente.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">JC</div>
+              <div><strong>Jorge Castro</strong><span>Viaje a la medida · Guadalajara</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         8. SOLICITA UNA COTIZACIÓN + CONTACTO
+         ================================================================ -->
+    <section class="section" id="cotizacion">
+      <div class="container quote__grid">
+
+        <div class="reveal" id="contacto">
+          <span class="section__eyebrow">Contacto</span>
+          <h2>Solicita una cotización</h2>
+          <p>Cuéntanos a dónde quieres ir y en menos de 24 horas recibirás una propuesta hecha a tu medida.</p>
+
+          <ul class="contact-list">
+            <li>
+              <div class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+              <div><strong>WhatsApp / Teléfono</strong><a href="https://wa.me/526691239999" target="_blank" rel="noopener">+52 669 123 9999</a></div>
+            </li>
+            <li>
+              <div class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+              <div><strong>Correo</strong><a href="mailto:contacto@vagaretravels.com">contacto@vagaretravels.com</a></div>
+            </li>
+            <li>
+              <div class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><strong>Horario</strong>Lun – Sáb · 9:00 a 19:00 h</div>
+            </li>
+            <li>
+              <div class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+              <div><strong>Ubicación</strong>Mazatlán, Sinaloa · Atención en todo México</div>
+            </li>
+          </ul>
+
+          <div class="social" aria-label="Redes sociales">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c0 2.5 2 5 5 5"/></svg></a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO: al enviar abre WhatsApp con el mensaje armado.
+             Cambia el número en main-v2.js (CONFIG.whatsapp). -->
+        <form class="form reveal" id="quoteForm" novalidate>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form__group">
+              <label for="phone">WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="669 000 0000" required>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com">
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="service">Tipo de viaje</label>
+              <select id="service" name="service" required>
+                <option value="">Selecciona…</option>
+                <option>Paquete por destino</option>
+                <option>Paquete temático</option>
+                <option>Crucero</option>
+                <option>Todo-Incluido</option>
+                <option>Viaje en grupo</option>
+                <option>Viaje romántico</option>
+                <option>Viaje a la medida</option>
+                <option>Solo vuelo u hotel</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="travelers">Viajeros</label>
+              <input type="number" id="travelers" name="travelers" min="1" value="2">
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="destination">Destino</label>
+              <input type="text" id="destination" name="destination" placeholder="¿A dónde vamos?">
+            </div>
+            <div class="form__group">
+              <label for="dates">Fechas aproximadas</label>
+              <input type="text" id="dates" name="dates" placeholder="Ej. 10–20 de marzo">
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label for="message">Cuéntanos más</label>
+            <textarea id="message" name="message" placeholder="Presupuesto, ocasión especial, preferencias…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">Enviar solicitud por WhatsApp</button>
+          <p class="form__note">Sin compromiso. Respondemos en menos de 24 horas.</p>
+
+          <div class="form__success" id="formSuccess" role="status">
+            ¡Listo! Se abrió WhatsApp con tu solicitud. Si no se abrió, escríbenos directo al <a href="https://wa.me/526691239999">+52 669 123 9999</a>.
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================================================================
+       9. FOOTER
+       ================================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <!-- LOGO CUADRADO: reemplaza el archivo conservando el nombre -->
+          <img class="footer__logo" src="img/logos/IMG%20Vagare%20Logo%20simple.jpeg" alt="Vagare Travels">
+          <p>Descubre el mundo, viaja libre, crea tu historia. Agencia de viajes con asesoría personalizada desde Mazatlán para todo México.</p>
+        </div>
+
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Paquetes por destino</a></li>
+            <li><a href="#servicios">Paquetes temáticos</a></li>
+            <li><a href="#servicios">Cruceros</a></li>
+            <li><a href="#servicios">Todo-Incluido</a></li>
+            <li><a href="#servicios">Viajes en grupo</a></li>
+            <li><a href="#servicios">Viajes románticos</a></li>
+            <li><a href="#servicios">Viajes a la medida</a></li>
+            <li><a href="#servicios">Vuelos y hoteles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Explora</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#paquetes">Paquetes</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#cotizacion">Cotización</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/526691239999" target="_blank" rel="noopener">+52 669 123 9999</a></li>
+            <li><a href="mailto:contacto@vagaretravels.com">contacto@vagaretravels.com</a></li>
+            <li>Mazatlán, Sinaloa, México</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; <span id="year">2026</span> Vagare Travels by Gaby Guerra. Todos los derechos reservados.</span>
+        <span>Aviso de privacidad · Términos y condiciones</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/526691239999" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.1.6 2.8.5.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+  </a>
+
+  <script src="main-v2.js"></script>
+</body>
+</html>
