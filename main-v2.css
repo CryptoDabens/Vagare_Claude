@@ -667,6 +667,9 @@ p  { margin: 0 0 1em; }
   box-shadow: 0 0 0 3px rgba(199,157,59,0.25);
 }
 .form textarea { resize: vertical; min-height: 110px; }
+/* Honeypot anti-bots: fuera de pantalla (no usar display:none, algunos bots lo detectan) */
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
 .form__note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.75rem; text-align: center; }
 
 .form__success {

@@ -5,13 +5,16 @@
    2. Menú móvil        → botón hamburguesa
    3. Dropdown Servicios
    4. Carrusel de paquetes
-   5. Formulario        → arma el mensaje y abre WhatsApp
+   5. Formulario        → registra en Google Sheets y abre WhatsApp
    6. Animación al hacer scroll
    ===================================================================== */
 
 /* ---------- 1. CONFIG: cambia aquí lo que necesites ---------- */
 const CONFIG = {
-  whatsapp: "526691239999",          // código de país + número, sin espacios ni "+"
+  whatsapp: "526692520244",          // código de país + número, sin espacios ni "+"
+  // URL de la Aplicación web de Apps Script (termina en /exec).
+  // Déjala vacía ("") para desactivar el registro en Google Sheets.
+  sheetsUrl: "https://script.google.com/macros/s/AKfycbwxqAPPCe-6ZJc-V6ZF2NCsjgpZzb3efDwsg2tuhVsYbH_u_ZASwIomWCMaYDMGGyK0/exec",
   carouselAutoplayMs: 6000,          // 0 para desactivar el avance automático
 };
 
@@ -192,6 +195,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const f = form.elements;
+
+    // Honeypot: si un bot llenó el campo oculto, fingimos éxito y no enviamos nada
+    if (f.website.value) {
+      success.classList.add("is-visible");
+      form.reset();
+      return;
+    }
+
+    // 1) Registrar en Google Sheets.
+    //    Se dispara ANTES de abrir WhatsApp, pero sin esperar la respuesta:
+    //    si esperáramos (await), el navegador bloquearía la ventana de WhatsApp
+    //    por considerarla un pop-up. sendBeacon garantiza que el envío se
+    //    complete aunque el usuario cambie de pestaña o de app.
+    saveLead({
+      nombre:        f.name.value,
+      whatsapp:      f.phone.value,
+      correo:        f.email.value,
+      tipo_viaje:    f.service.value,
+      viajeros:      f.travelers.value,
+      destino:       f.destination.value,
+      fechas_aprox:  f.dates.value,
+      cuentanos_mas: f.message.value,
+    });
+
+    // 2) Abrir WhatsApp con el mensaje armado
     const lines = [
       `¡Hola Gaby! Quiero una cotización con Vagare Travels.`,
       ``,
@@ -213,6 +241,20 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
     form.travelers.value = 2;
   });
+
+  // Envía los datos a Google Sheets (Apps Script). Nunca bloquea ni rompe
+  // el flujo de WhatsApp: si falla, sólo se registra en la consola.
+  function saveLead(data) {
+    if (!CONFIG.sheetsUrl) return;
+    const body = new URLSearchParams(data); // formato que Apps Script lee en e.parameter
+    try {
+      if (navigator.sendBeacon && navigator.sendBeacon(CONFIG.sheetsUrl, body)) return;
+      fetch(CONFIG.sheetsUrl, { method: "POST", body, mode: "no-cors", keepalive: true })
+        .catch(err => console.warn("No se pudo registrar el lead:", err));
+    } catch (err) {
+      console.warn("No se pudo registrar el lead:", err);
+    }
+  }
 
 
   /* ---------- 6. ANIMACIÓN AL HACER SCROLL ---------- */

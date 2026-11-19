@@ -195,6 +195,23 @@ Sustituye el archivo **conservando el nombre**:
 - Formulario: `CONFIG.whatsapp` en `main-v2.js` (código de país + número, sin `+` ni espacios).
 - Enlaces directos: busca `wa.me/` y `mailto:` en `index-v2.html` (contacto, footer y botón flotante).
 
+### Formulario y Google Sheets
+
+Al enviar el formulario, los datos se registran en la hoja **vagare_CRM → pestaña Leads** (cuenta vagaretravels) y después se abre WhatsApp. El código del lado de Google está en [`apps-script/Code.gs`](apps-script/Code.gs).
+
+**Encabezados de la pestaña Leads (fila 1):** `fecha` (opcional, se llena sola), `nombre`, `whatsapp`, `correo`, `tipo_viaje`, `viajeros`, `destino`, `fechas_aprox`, `cuentanos_mas`. El orden no importa; el script acomoda por nombre.
+
+**Publicar el script (una sola vez):**
+1. En la hoja: *Extensiones → Apps Script*. Borra lo que haya y pega el contenido de `apps-script/Code.gs`. Guarda.
+2. *Implementar → Nueva implementación →* tipo **Aplicación web**.
+   - Ejecutar como: **Yo** · Quién tiene acceso: **Cualquier usuario**.
+3. Autoriza los permisos. Si aparece "Google no ha verificado esta app": *Configuración avanzada → Ir a … (no seguro)*. Es normal, la app es tuya.
+4. Copia la URL que termina en `/exec` y pégala en `CONFIG.sheetsUrl` de `main-v2.js`.
+
+**Si modificas el script después:** *Implementar → Administrar implementaciones → ✏️ → Versión: Nueva versión*. Así la URL no cambia. (Una "Nueva implementación" genera otra URL.)
+
+Con `sheetsUrl: ""` el registro se desactiva y el formulario sólo abre WhatsApp.
+
 ### Paquetes del carrusel
 
 Duplica un bloque `<article class="package-card">…</article>` dentro de `.carousel__track` y edita imagen, textos, precio y el atributo `data-package` (pre-llena el campo *Destino* del formulario). El carrusel y los indicadores se recalculan solos.

@@ -451,6 +451,12 @@
             <textarea id="message" name="message" placeholder="Presupuesto, ocasión especial, preferencias…"></textarea>
           </div>
 
+          <!-- Honeypot anti-bots: oculto para personas, no lo borres -->
+          <div class="form__hp" aria-hidden="true">
+            <label for="website">No llenes este campo</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
           <button type="submit" class="btn btn--primary btn--block">Enviar solicitud por WhatsApp</button>
           <p class="form__note">Sin compromiso. Respondemos en menos de 24 horas.</p>
 
