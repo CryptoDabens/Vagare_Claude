@@ -571,6 +571,8 @@ p  { margin: 0 0 1em; }
 
 /* =====================================================================
    10. TESTIMONIOS
+   (Sección desactivada en index.html; busca TESTIMONIOS-OFF.
+    Estos estilos se conservan para poder reactivarla.)
    ===================================================================== */
 .testimonials__grid {
   display: grid;

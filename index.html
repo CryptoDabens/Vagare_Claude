@@ -93,7 +93,7 @@
          ================================================================ -->
     <section class="trust" aria-label="Por qué elegirnos">
       <div class="container trust__grid">
-        <div class="trust__item"><strong>+120</strong><span>viajes planeados</span></div>
+        <!-- <div class="trust__item"><strong>+120</strong><span>viajes planeados</span></div> -->
         <div class="trust__item"><strong>+30</strong><span>destinos en 4 continentes</span></div>
         <div class="trust__item"><strong>24/7</strong><span>acompañamiento durante tu viaje</span></div>
         <div class="trust__item"><strong>0</strong><span>costo por asesoría</span></div>
@@ -251,7 +251,7 @@
 
               <article class="package-card">
                 <div class="package-card__media">
-                  <img src="img/hero/lets-go-travel.jpg" alt="Collage de lugares icónicos del mundo" loading="lazy">
+                  <img src="img/hero/riviera-maya.jpg" alt="Collage de lugares icónicos del mundo" loading="lazy">
                   <span class="package-card__tag">Todo-Incluido</span>
                 </div>
                 <div class="package-card__body">
@@ -297,7 +297,7 @@
             <li>Alianzas con mayoristas, aerolíneas y navieras para conseguir la mejor tarifa.</li>
             <li>Planes de pago y meses sin intereses con tarjetas participantes.</li>
           </ul>
-          <p class="about__signature">— Gaby Guerra</p>
+          <p class="about__signature">— Gabriela Guerra</p>
           <a href="#cotizacion" class="btn btn--primary">Platiquemos de tu viaje</a>
         </div>
       </div>
@@ -305,8 +305,16 @@
 
 
     <!-- ================================================================
-         7. TESTIMONIOS
+         7. TESTIMONIOS  —  DESACTIVADA TEMPORALMENTE
+         Para reactivarla:
+           1. Quita las líneas "INICIO/FIN SECCIÓN DESACTIVADA" que envuelven
+              este bloque.
+           2. Descomenta el enlace "Testimonios" del footer (busca TESTIMONIOS-OFF).
+           3. En la sección #cotizacion, quita la clase "section--alt"
+              (se añadió para que no queden dos secciones blancas seguidas).
+         Los estilos siguen en main-v2.css (sección 10. TESTIMONIOS).
          ================================================================ -->
+    <!-- INICIO SECCIÓN DESACTIVADA (TESTIMONIOS-OFF)
     <section class="section section--dark" id="testimonios">
       <div class="container">
         <div class="section__head reveal">
@@ -345,12 +353,15 @@
         </div>
       </div>
     </section>
+    FIN SECCIÓN DESACTIVADA (TESTIMONIOS-OFF) -->
 
 
     <!-- ================================================================
          8. SOLICITA UNA COTIZACIÓN + CONTACTO
+         TESTIMONIOS-OFF: "section--alt" es temporal; quítala al reactivar
+         testimonios para recuperar la alternancia de fondos original.
          ================================================================ -->
-    <section class="section" id="cotizacion">
+    <section class="section section--alt" id="cotizacion">
       <div class="container quote__grid">
 
         <div class="reveal" id="contacto">
@@ -486,7 +497,9 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#paquetes">Paquetes</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
+            <!-- TESTIMONIOS-OFF: descomentar al reactivar la sección
             <li><a href="#testimonios">Testimonios</a></li>
+            -->
             <li><a href="#cotizacion">Cotización</a></li>
           </ul>
         </div>
