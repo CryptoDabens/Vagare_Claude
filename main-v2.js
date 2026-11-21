@@ -237,6 +237,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
     window.open(url, "_blank", "noopener");
 
+    // 3) Analítica (sólo si el visitante aceptó cookies; ver analytics.js).
+    //    No se envía ningún dato personal, sólo el tipo de viaje.
+    if (window.vagareTrack) {
+      window.vagareTrack("generate_lead", { tipo_viaje: f.service.value }, "Lead");
+    }
+
     success.classList.add("is-visible");
     form.reset();
     form.travelers.value = 2;

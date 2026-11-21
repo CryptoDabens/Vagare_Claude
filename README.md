@@ -97,6 +97,9 @@ Vagare_Claude/
 ├── index-v2.html          # Página principal (estructura y contenido)
 ├── main-v2.css            # Estilos — sección 1 = variables de marca
 ├── main-v2.js             # Menú, dropdown, carrusel, formulario, animaciones
+├── analytics.js          # Banner de cookies + GA4 + Meta Pixel (IDs aquí)
+├── aviso-privacidad.html # Aviso de privacidad integral
+├── terminos.html         # Términos y condiciones
 ├── index-Copilot.html     # Prototipo anterior (referencia)
 ├── GUIA-v2.md             # Guía rápida de mantenimiento
 ├── README.md
@@ -212,6 +215,34 @@ Al enviar el formulario, los datos se registran en la hoja **vagare_CRM → pest
 
 Con `sheetsUrl: ""` el registro se desactiva y el formulario sólo abre WhatsApp.
 
+### Analítica (Google Analytics 4 y Meta Pixel)
+
+Vive en `analytics.js`, que se incluye en todas las páginas. Pega tus IDs en `ANALYTICS_CONFIG`:
+
+```js
+const ANALYTICS_CONFIG = {
+  ga4Id:       "G-XXXXXXXXXX",     // GA4 → Administrar → Flujos de datos → Web
+  metaPixelId: "123456789012345",  // Meta → Administrador de eventos
+};
+```
+
+- Mientras ambos IDs estén vacíos no aparece el banner y no se carga nada.
+- Con IDs, se muestra un banner **Aceptar / Rechazar**; GA4 y el Pixel sólo se cargan si el visitante acepta. La decisión se guarda en su navegador y puede cambiarla con *Preferencias de cookies* en el footer.
+- Eventos enviados (sin datos personales):
+
+| Acción | GA4 | Meta Pixel |
+|---|---|---|
+| Envío del formulario de cotización | `generate_lead` (`tipo_viaje`) | `Lead` |
+| Clic en un enlace de WhatsApp | `whatsapp_click` (`ubicacion`) | `Contact` |
+| Clic en el correo | `email_click` (`ubicacion`) | `Contact` |
+| Clic en Instagram / Facebook / TikTok | `social_click` (`red`, `ubicacion`) | — |
+
+En GA4 marca `generate_lead` y `whatsapp_click` como **eventos clave** para verlos como conversiones.
+
+### Páginas legales
+
+`aviso-privacidad.html` y `terminos.html` usan el mismo CSS (sección 17). Los datos por completar aparecen **resaltados en amarillo** (clase `legal-placeholder`): nombre legal, domicilio, formas de pago y cargo por cambios. Al editar el texto, actualiza la fecha de *Última actualización*. Se recomienda que un abogado revise ambos textos antes de publicar.
+
 ### Paquetes del carrusel
 
 Duplica un bloque `<article class="package-card">…</article>` dentro de `.carousel__track` y edita imagen, textos, precio y el atributo `data-package` (pre-llena el campo *Destino* del formulario). El carrusel y los indicadores se recalculan solos.
@@ -257,12 +288,12 @@ Si quieres que la URL raíz cargue la página, renombra `index-v2.html` a `index
 
 - [ ] Foto real de la asesora en la sección *Nosotros*
 - [ ] Sustituir cifras, precios y testimonios de ejemplo por datos reales
-- [ ] Enlaces reales a Instagram, Facebook y TikTok
-- [ ] Páginas de *Aviso de privacidad* y *Términos y condiciones*
+- [ ] Enlaces reales a Facebook y TikTok (Instagram ✔)
+- [x] Páginas de *Aviso de privacidad* y *Términos y condiciones* (faltan nombre legal, domicilio, formas de pago y cargo por cambios: buscar `legal-placeholder`)
 - [ ] Envío del formulario también por correo (Netlify Forms o Formspree)
 - [ ] Optimizar imágenes (WebP / compresión) para mejorar el tiempo de carga
 - [ ] Meta tags Open Graph para compartir en redes
-- [ ] Google Analytics / Meta Pixel
+- [x] Google Analytics / Meta Pixel con banner de cookies (faltan los IDs en `analytics.js`)
 
 ---
 

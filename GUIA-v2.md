@@ -40,3 +40,11 @@ La cuadrícula tiene 8 tarjetas (2 filas de 4 en escritorio). Para editar una, b
 ## Contenido de ejemplo
 Cifras de la franja de confianza, precios, testimonios y horario son ficticios:
 reemplázalos con datos reales antes de publicar.
+
+## Analítica y cookies
+Pega los IDs de Google Analytics 4 y Meta Pixel en `analytics.js` (`ANALYTICS_CONFIG`).
+Sin IDs no se carga nada ni aparece el banner.
+
+## Páginas legales
+`aviso-privacidad.html` y `terminos.html`. Completa lo resaltado en amarillo
+(busca `legal-placeholder`) y actualiza la fecha de "Última actualización" al editar.
