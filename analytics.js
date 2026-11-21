@@ -11,6 +11,7 @@
      · Formulario de cotización enviado → GA4 "generate_lead" · Pixel "Lead"
      · Clic en cualquier enlace a WhatsApp → GA4 "whatsapp_click" · Pixel "Contact"
      · Clic en correo (mailto:)          → GA4 "email_click"    · Pixel "Contact"
+     · Clic en Instagram/Facebook/TikTok → GA4 "social_click"
    Nunca se envían nombre, teléfono, correo ni mensajes del formulario.
    ===================================================================== */
 
@@ -89,6 +90,10 @@ const ANALYTICS_CONFIG = {
                 : "pagina";
     if (href.includes("wa.me/")) window.vagareTrack("whatsapp_click", { ubicacion: where }, "Contact");
     else if (href.startsWith("mailto:")) window.vagareTrack("email_click", { ubicacion: where }, "Contact");
+    else if (/instagram\.com|facebook\.com|tiktok\.com/.test(href)) {
+      const red = href.match(/(instagram|facebook|tiktok)\.com/)[1];
+      window.vagareTrack("social_click", { red: red, ubicacion: where }, null);
+    }
   });
 
   /* ---------- 5. BANNER ---------- */

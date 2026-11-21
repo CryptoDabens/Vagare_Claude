@@ -235,6 +235,7 @@ const ANALYTICS_CONFIG = {
 | Envío del formulario de cotización | `generate_lead` (`tipo_viaje`) | `Lead` |
 | Clic en un enlace de WhatsApp | `whatsapp_click` (`ubicacion`) | `Contact` |
 | Clic en el correo | `email_click` (`ubicacion`) | `Contact` |
+| Clic en Instagram / Facebook / TikTok | `social_click` (`red`, `ubicacion`) | — |
 
 En GA4 marca `generate_lead` y `whatsapp_click` como **eventos clave** para verlos como conversiones.
 
@@ -287,7 +288,7 @@ Si quieres que la URL raíz cargue la página, renombra `index-v2.html` a `index
 
 - [ ] Foto real de la asesora en la sección *Nosotros*
 - [ ] Sustituir cifras, precios y testimonios de ejemplo por datos reales
-- [ ] Enlaces reales a Instagram, Facebook y TikTok
+- [ ] Enlaces reales a Facebook y TikTok (Instagram ✔)
 - [x] Páginas de *Aviso de privacidad* y *Términos y condiciones* (faltan nombre legal, domicilio, formas de pago y cargo por cambios: buscar `legal-placeholder`)
 - [ ] Envío del formulario también por correo (Netlify Forms o Formspree)
 - [ ] Optimizar imágenes (WebP / compresión) para mejorar el tiempo de carga
