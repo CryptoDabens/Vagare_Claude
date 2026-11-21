@@ -17,7 +17,7 @@
 
 /* ---------- 1. CONFIG: pega aquí tus IDs ---------- */
 const ANALYTICS_CONFIG = {
-  ga4Id:       "",   // Google Analytics 4 → "G-XXXXXXXXXX" (Administrar → Flujos de datos → Web)
+  ga4Id:       "G-BSNZZD0P36",   // Google Analytics 4 → "G-XXXXXXXXXX" (Administrar → Flujos de datos → Web)
   metaPixelId: "",   // Meta Pixel → sólo el número, ej. "123456789012345" (Administrador de eventos)
 
   storageKey:  "vagare_cookie_consent",   // dónde se guarda la decisión en el navegador
